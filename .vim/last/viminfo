@@ -1,0 +1,571 @@
+# 这个 viminfo 文件是由 Vim 7.2 所产生。
+# 如果想要自行修改请特别小心！
+
+# 文件被写的时候 ‘encoding’ 的值
+*encoding=utf-8
+
+
+# hlsearch on (H) or off (h):
+~h
+# 上个 Search 图案：
+~MSle0~/Text
+
+# 上个 替换 Search 图案：
+~MSle0& \/>
+
+# 最后替换的字符串
+$-
+
+# 命令行 历史记录 (从新到旧)：
+:!./test_draw.py
+:w
+:q
+:vsp config.sample.py
+:sp database.py
+:sp draw_graph.py
+:vsp draw_graph.py
+:vsp send_mail.py
+:!time ./test_draw.py
+:!time .t/e
+:!
+:x
+:!./
+:!chmod +x test_draw.py
+:vsp test_draw.py
+:qa
+:vsp run.py
+:sp new
+:q!
+:sp
+
+# 查找字符串 历史记录 (从新到旧)：
+?/Text
+?/Multi
+?/flw
+? \<application\>
+? ‐
+?/Room
+?/data
+?  \/>
+? \s+\/>
+?/flag
+?/flags
+?/Message
+?/&
+?/=
+? \<u\>
+?/subscribers
+?/session.save
+?/download_list
+? RatingProperty
+?/DATABASE
+
+# 表达式 历史记录 (从新到旧)：
+
+# 输入行 历史记录 (从新到旧)：
+@#top10site
+@*.php
+@/home/upsuper/Projects/zijue-web-fix/main
+@is_admin
+@/home/upsuper/Projects/zijue-web-top10/main
+@begin
+@begi
+@*.py
+@/home/upsuper/Projects/zijue-tools/powernotice
+@get_data_from_server
+@FLAGS_NOT_VALID
+@FLAGS_NOT_VAILD
+@vaild
+@valid
+
+# 输入行 历史记录 (从新到旧)：
+
+# 寄存器:
+"0	LINE	0
+	font = FontProperties(fname='wqy-microhei.ttc')
+"1	LINE	0
+	# 绘制用字体
+	font_filename = 
+"2	LINE	0
+	
+	x = [i for i in range(1, 8)]
+	y = [0.5, 0.9, 0.15, 0.35, 0.0, 0.0, 0.7]
+	ave = sum(y) / len(x)
+	ave_y = [ave for i in range(len(y))]
+	font = FontProperties(fname='/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc')
+	
+	plt.figure(figsize=(8, 4))
+	
+	# 绘制曲线
+	plt.plot(x, ave_y, '--', label=u'周平均用电',
+	         color='#ffd700', linewidth=2.0, alpha=0.3)
+	plt.plot(x, y, label=u'每日用电',
+	         color='#ff8c00', linewidth=2.0, alpha=0.8)
+	
+	
+	# 设置边界
+	plt.xlim(0.7, 7.3)
+	plt.ylim(min(y) - 0.5, max(y) + 0.5)
+	# 设置网格
+	plt.grid(color='#c0c0c0')
+	
+	# 设置坐标轴
+	plt.ylabel(u'度', fontproperties=font)
+	ax = plt.gca()
+	ax.xaxis.set_major_formatter(FuncFormatter(
+	    lambda x, pos: (
+	        lambda x: [u'', u'星期一', u'星期二', u'星期三',
+	            u'星期四', u'星期五', u'星期六', u'星期日']
+	                [x if x > 0 and x < 8 else 0]
+	        )(int(x))
+	    ))
+	map(lambda tick: tick.label1.set_fontproperties(font),
+	        ax.xaxis.get_major_ticks())
+	
+	# 设置图例
+	legend = plt.legend()
+	for text in legend.get_texts():
+	    text.set_fontproperties(font)
+	
+	from StringIO import StringIO
+	image = StringIO()
+	plt.savefig(image, format='png')
+	with open('week2.png', 'wb') as f:
+	    f.write(image.getvalue())
+"3	LINE	0
+	
+"4	LINE	0
+	    plt.close(
+"5	BLOCK	0
+	#
+	#
+	#
+"6	LINE	0
+	
+"7	LINE	0
+	    # 绘制曲线
+	    plt.plot(x, ave, '--', label=u'周平均用电',
+	             color='#ffd700', linewidth=2.0, alpha=0.3)
+	    plt.plot(x, y, label=u'每日用电',
+	             color='#ff8c00', linewidth=2.0, alpha=0.8)
+"8	LINE	0
+	    text.set_fontsize(10.0)
+"9	LINE	0
+	    # 获取数据
+"a@	CHAR	0
+	jjjjjjjpukp:wn
+"h	CHAR	0
+	h
+"x	LINE	0
+	        <li{if $__.category && $__.category == $category} class="current"{/if}><a href="/news/category/{$category|escape:'url'}/">{$category}</a> ({$count})</li>
+"y	LINE	0
+	        <li{if $__.month && $__.month == "$year-$month"} class="current"{/if}><a href="/news/archive/{$year}-{$month}/">{$year}�?{$month}�?</a> ({$count})</li>
+""-	CHAR	0
+	之徒
+
+# 文件标记:
+'0  59  20  ~/Projects/zijue-tools/powernotice/draw_graph.py
+'1  4  0  ~/Projects/zijue-tools/powernotice/send_mail.py
+'2  32  24  ~/程序/lin's password/run.py
+'3  1  0  ~/Projects/zijue-web/main/:qa
+'4  132  1  ~/Projects/zijue-web/main/index.php
+'5  348  0  ~/Learning/os/cd/chapter3/e/pmtest5a.asm
+'6  1  0  ~/Projects/zijue-tools/powernotice/send_mail.py
+'7  932  0  ~/Projects/fanfou_avatars/images
+'8  33  12  ~/Projects/tiebaelect/main.py
+'9  36  16  ~/Projects/fanfou_avatars/fetcher.py
+
+# 跳转列表 (从新到旧):
+-'  59  20  ~/Projects/zijue-tools/powernotice/draw_graph.py
+-'  42  0  ~/Projects/zijue-tools/powernotice/draw_graph.py
+-'  133  0  ~/Projects/zijue-tools/powernotice/send_mail.py
+-'  20  9  ~/Projects/zijue-tools/powernotice/test_draw.py
+-'  43  0  ~/Projects/zijue-tools/powernotice/test_draw.py
+-'  33  13  ~/Projects/zijue-tools/powernotice/test_draw.py
+-'  36  18  ~/Projects/zijue-tools/powernotice/test_draw.py
+-'  34  6  ~/Projects/zijue-tools/powernotice/test_draw.py
+-'  35  0  ~/Projects/zijue-tools/powernotice/test_draw.py
+-'  40  18  ~/Projects/zijue-tools/powernotice/test_draw.py
+-'  41  53  ~/Projects/zijue-tools/powernotice/test_draw.py
+-'  21  36  ~/Projects/zijue-tools/powernotice/test_draw.py
+-'  30  6  ~/Projects/zijue-tools/powernotice/test_draw.py
+-'  19  67  ~/Projects/zijue-tools/powernotice/test_draw.py
+-'  29  13  ~/Projects/zijue-tools/powernotice/test_draw.py
+-'  16  43  ~/Projects/zijue-tools/powernotice/test_draw.py
+-'  48  28  ~/Projects/zijue-tools/powernotice/test_draw.py
+-'  24  26  ~/Projects/zijue-tools/powernotice/test_draw.py
+-'  10  4  ~/Projects/zijue-tools/powernotice/test_draw.py
+-'  9  0  ~/Projects/zijue-tools/powernotice/test_draw.py
+-'  1  0  ~/Projects/zijue-tools/powernotice/test_draw.py
+-'  4  0  ~/Projects/zijue-tools/powernotice/send_mail.py
+-'  1  0  ~/Projects/zijue-tools/powernotice/send_mail.py
+-'  32  24  ~/程序/lin's password/run.py
+-'  10  9  ~/程序/lin's password/header
+-'  12  14  ~/程序/lin's password/header
+-'  8  0  ~/程序/lin's password/run.py
+-'  1  0  ~/程序/lin's password/run.py
+-'  1  0  ~/Projects/zijue-web/main/:qa
+-'  18  0  ~/Projects/zijue-web/main/manage/xinguan/front.php
+-'  30  0  ~/Projects/zijue-web/main/manage/xinguan/menu.php
+-'  3  7  ~/Projects/zijue-web/main/manage/xinguan/menu.php
+-'  1  0  ~/Projects/zijue-web/main/manage/main/entry.php
+-'  29  0  ~/Projects/zijue-web/main/main/entry.php
+-'  1  0  ~/Projects/zijue-web/main/main/entry.php
+-'  109  0  ~/Projects/zijue-web/main/functions.php
+-'  1  0  ~/Projects/zijue-web/main/index.php
+-'  132  1  ~/Projects/zijue-web/main/index.php
+-'  348  0  ~/Learning/os/cd/chapter3/e/pmtest5a.asm
+-'  1  0  ~/Learning/os/cd/chapter3/e/pmtest5a.asm
+-'  932  0  ~/Projects/fanfou_avatars/images
+-'  1  0  ~/Projects/fanfou_avatars/images
+-'  33  12  ~/Projects/tiebaelect/main.py
+-'  1  0  ~/Projects/tiebaelect/main.py
+-'  36  16  ~/Projects/fanfou_avatars/fetcher.py
+-'  1  0  ~/Projects/fanfou_avatars/fetcher.py
+-'  67  52  ~/Projects/fanfou_avatars/fetcher.py
+-'  1  21  /tmp/hg-editor-F6BKfN.txt
+-'  79  12  ~/Projects/zijue-tools/powernotice/refresh_data.py
+-'  1  0  ~/Projects/zijue-tools/powernotice/refresh_data.py
+-'  1  20  /tmp/hg-editor-ouPGzh.txt
+-'  2  0  ~/Projects/zijue-tools/.hgignore
+
+# 文件内的标记历史记录 (从新到旧):
+
+> ~/Projects/zijue-tools/powernotice/test_draw.py
+	"	14	44
+	^	14	45
+	.	14	44
+	+	22	8
+	+	30	0
+	+	19	0
+	+	30	17
+	+	30	21
+	+	30	0
+	+	30	0
+	+	30	22
+	+	30	23
+	+	30	0
+	+	30	13
+	+	30	0
+	+	30	4
+	+	30	7
+	+	30	32
+	+	30	0
+	+	30	23
+	+	19	22
+	+	21	36
+	+	19	23
+	+	30	0
+	+	45	0
+	+	43	0
+	+	31	14
+	+	44	11
+	+	55	0
+	+	25	11
+	+	28	8
+	+	29	0
+	+	32	0
+	+	28	11
+	+	24	0
+	+	34	43
+	+	40	20
+	+	40	64
+	+	43	0
+	+	40	18
+	+	40	72
+	+	43	9
+	+	24	0
+	+	34	0
+	+	43	0
+	+	40	51
+	+	43	0
+	+	40	5
+	+	34	0
+	+	40	18
+	+	34	0
+	+	18	11
+	+	23	0
+	+	32	0
+	+	33	0
+	+	43	0
+	+	34	0
+	+	40	18
+	+	40	121
+	+	40	0
+	+	40	85
+	+	40	15
+	+	34	0
+	+	43	54
+	+	43	0
+	+	43	54
+	+	43	0
+	+	42	0
+	+	41	0
+	+	43	0
+	+	34	6
+	+	40	0
+	+	34	7
+	+	40	21
+	+	34	43
+	+	40	0
+	+	43	0
+	+	16	31
+	+	51	7
+	+	53	17
+	+	16	26
+	+	51	0
+	+	51	0
+	+	49	28
+	+	50	17
+	+	51	0
+	+	50	4
+	+	51	16
+	+	49	5
+	+	53	23
+	+	49	5
+	+	53	25
+	+	48	0
+	+	55	0
+	+	55	0
+	+	55	37
+	+	55	15
+	+	55	0
+	+	52	0
+	+	55	0
+	+	51	0
+	+	55	0
+	+	14	44
+
+> ~/Projects/zijue-tools/powernotice/send_mail.py
+	"	132	16
+	^	100	47
+	.	100	44
+	+	81	0
+	+	63	15
+	+	69	28
+	+	134	0
+	+	80	37
+	+	71	11
+	+	83	14
+	+	60	56
+	+	3	9
+	+	60	32
+	+	75	95
+	+	104	19
+	+	15	55
+	+	39	33
+	+	31	21
+	+	34	14
+	+	32	7
+	+	34	0
+	+	33	31
+	+	32	24
+	+	105	69
+	+	106	0
+	+	105	0
+	+	90	49
+	+	92	0
+	+	96	11
+	+	105	28
+	+	108	14
+	+	124	46
+	+	125	15
+	+	134	0
+	+	125	11
+	+	134	0
+	+	125	118
+	+	125	143
+	+	125	71
+	+	125	77
+	+	125	159
+	+	125	92
+	+	124	48
+	+	125	111
+	+	124	44
+	+	125	89
+	+	125	11
+	+	124	37
+	+	125	41
+	+	125	55
+	+	134	0
+	+	125	80
+	+	127	0
+	+	127	0
+	+	127	40
+	+	125	88
+	+	127	75
+	+	128	13
+	+	125	11
+	+	125	69
+	+	134	0
+	+	134	0
+	+	134	25
+	+	134	95
+	+	134	78
+	+	134	58
+	+	134	0
+	+	134	0
+	+	134	24
+	+	134	98
+	+	134	78
+	+	134	61
+	+	134	0
+	+	127	0
+	+	111	14
+	+	112	0
+	+	122	0
+	+	116	129
+	+	115	98
+	+	118	125
+	+	110	14
+	+	127	14
+	+	110	69
+	+	125	30
+	+	125	39
+	+	125	50
+	+	125	19
+	+	126	0
+	+	125	30
+	+	127	51
+	+	126	0
+	+	124	23
+	+	125	52
+	+	127	56
+	+	133	50
+	+	128	55
+	+	127	58
+	+	128	54
+	+	131	41
+	+	132	43
+	+	133	42
+	+	116	77
+	+	100	44
+
+> ~/Projects/zijue-tools/powernotice/draw_graph.py
+	"	59	20
+	^	14	14
+	.	15	44
+	+	1	25
+	+	8	36
+	+	8	0
+	+	7	30
+	+	8	43
+	+	72	0
+	+	72	0
+	+	72	3
+	+	3	14
+	+	11	0
+	+	13	0
+	+	72	0
+	+	71	7
+	+	70	30
+	+	17	0
+	+	18	36
+	+	20	23
+	+	21	4
+	+	69	0
+	+	21	4
+	+	17	23
+	+	70	24
+	+	22	37
+	+	69	0
+	+	23	27
+	+	24	60
+	+	26	24
+	+	27	4
+	+	30	31
+	+	69	0
+	+	35	28
+	+	18	0
+	+	19	0
+	+	28	18
+	+	34	18
+	+	69	55
+	+	69	0
+	+	69	0
+	+	43	15
+	+	46	15
+	+	52	18
+	+	61	9
+	+	63	38
+	+	51	0
+	+	49	51
+	+	50	0
+	+	69	0
+	+	37	0
+	+	36	0
+	+	42	0
+	+	5	28
+	+	67	35
+	+	69	0
+	+	69	0
+	+	68	26
+	+	15	0
+	+	16	0
+	+	14	11
+	+	15	44
+
+> ~/Projects/zijue-tools/powernotice/database.py
+	"	40	5
+	^	35	27
+	.	35	26
+	+	6	19
+	+	59	27
+	+	5	0
+	+	54	0
+	+	34	55
+	+	34	16
+	+	34	5
+	+	25	44
+	+	29	0
+	+	28	20
+	+	32	51
+	+	34	0
+	+	34	16
+	+	31	28
+	+	34	0
+	+	32	34
+	+	32	51
+	+	32	50
+	+	34	0
+	+	32	85
+	+	32	84
+	+	29	20
+	+	22	5
+	+	17	0
+	+	33	20
+	+	21	18
+	+	45	16
+	+	46	16
+	+	45	16
+	+	33	49
+	+	21	0
+	+	52	5
+	+	26	41
+	+	27	21
+	+	29	0
+	+	28	20
+	+	27	0
+	+	30	29
+	+	11	9
+	+	34	5
+	+	53	10
+	+	33	0
+	+	32	57
+	+	33	51
+	+	43	44
+	+	47	0
+	+	49	47
+	+	26	44
+	+	40	5
+	+	40	14
+	+	39	0
+	+	40	0
+	+	35	26
+
+> ~/Projects/zijue-tools/powernotice/config.sample.py
+	"	13	0
+	.	14	0
+	+	11	33
+	+	13	25
+	+	14	0
