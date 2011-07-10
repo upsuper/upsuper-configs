@@ -40,7 +40,8 @@ set guioptions-=m
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
-color desert
+"color desert
+color warm_grey
 "set ttyscroll=0
 
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
@@ -83,4 +84,9 @@ imap <silent> <expr> <buffer> <CR> pumvisible() ? "<CR><C-R>=(col('.')-1&&match(
 
 if !has("gui_running")
     set t_IE=(B
+endif
+
+if has("gui_gtk2")
+    set guifont=DejaVu\ Sans\ Mono\ 10
+    set guifontwide=WenQuanYi\ MicroHei\ 10
 endif

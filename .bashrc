@@ -111,6 +111,8 @@ export PATH
 if [[ $(tty) = /dev/tty* ]]; then
     export LANG=C
     export LANGUAGE=C
+else
+    export LANG="zh_CN.UTF-8"
 fi
 
 CDPATH=.:$HOME:$HOME/Projects
