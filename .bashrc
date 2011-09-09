@@ -101,19 +101,22 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # set PATH so it includes user's private bin if it exists
-PATH="$HOME/bin:$PATH"
 GAE_PATH=$HOME/bin/google_appengine
 [ -d "$GAE_PATH" ] && PATH="$PATH:$GAE_PATH"
 ANDROID_SDK_PATH=$HOME/bin/android-sdk-linux_x86/tools
 [ -d "$ANDROID_SDK_PATH" ] && PATH="$PATH:$ANDROID_SDK_PATH"
+OPT_LOCAL_PATH=/opt/local/bin
+[ -d "$OPT_LOCAL_PATH" ] && PATH="$OPT_LOCAL_PATH:$PATH"
+HOME_BIN=$HOME/bin
+[ -d $HOME_BIN ] && PATH="$HOME/bin:$PATH"
 export PATH
 
-if [[ $(tty) = /dev/tty* ]]; then
-    export LANG=C
-    export LANGUAGE=C
-else
-    export LANG="zh_CN.UTF-8"
-fi
+# if [[ $(tty) = /dev/tty* ]]; then
+#     export LANG=C
+#     export LANGUAGE=C
+# else
+#     export LANG="zh_CN.UTF-8"
+# fi
 
 CDPATH=.:$HOME:$HOME/Projects
 
