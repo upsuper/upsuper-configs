@@ -18,10 +18,14 @@ set smartcase
 set foldmethod=indent
 set number
 set ambiwidth=double
-set fileencodings=utf-8,gb18030
+set fileencodings=UTF-8,GB18030
 set shortmess=atI
 set wildmode=longest,list
 set splitright
+
+set noimdisable
+set iminsert=0
+inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 
 set formatoptions+=m
 "set complete=.
@@ -36,13 +40,14 @@ digraph c3 12834
 digraph c4 12835
 digraph c0 12841
 
-set guioptions-=m
-set guioptions-=T
-set guioptions-=r
-set guioptions-=L
-"color desert
-color warm_grey
-"set ttyscroll=0
+if has("gui")
+    set guioptions-=m
+    set guioptions-=T
+    set guioptions-=r
+    set guioptions-=L
+    "color desert
+    color warm_grey
+endif
 
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.*/
