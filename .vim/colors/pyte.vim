@@ -62,7 +62,7 @@ hi Type       guifg=#e5a00d gui=italic
 hi Structure  guifg=#007020 gui=italic
 hi Function   guifg=#06287e gui=italic
 
-hi Identifier guifg=#5b3674 gui=italic
+hi Identifier guifg=#2c5c87 guibg=#bbd3e8 gui=italic
 
 hi Repeat      guifg=#7fbf58 gui=bold
 hi Conditional guifg=#4c8f2f gui=bold
@@ -73,10 +73,10 @@ hi PreProc    guifg=#1060a0 gui=NONE
 hi Define      guifg=#1060a0 gui=bold
 
 hi Error      guifg=red guibg=white gui=bold,underline
-hi Todo       guifg=#a0b0c0 guibg=NONE gui=italic,bold,underline
+hi Todo       guifg=#a9c4df guibg=#113251 gui=bold,underline
 
 " Python: %(...)s - constructs, encoding
-hi Special    guifg=#70a0d0 gui=italic
+hi Special    guifg=#70a0d0 gui=NONE
 
 hi Operator   guifg=#408010
 
