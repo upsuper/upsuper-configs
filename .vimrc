@@ -46,7 +46,11 @@ if has("gui")
     set guioptions-=r
     set guioptions-=L
     "color desert
-    color warm_grey
+    if has("gui_gtk2")
+        color warm_grey
+    elseif has("gui_macvim")
+        color tidy
+    end
 endif
 
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
@@ -85,7 +89,6 @@ let Grep_Default_Filelist = '*.php'
 imap <silent> <expr> <buffer> <CR> pumvisible() ? "<CR><C-R>=(col('.')-1&&match(getline(line('.')), '\\.',
       \ col('.')-2) == col('.')-2)?\"\<lt>C-X>\<lt>C-O>\":\"\"<CR>"
       \ : "<CR>"
-
 
 if !has("gui_running")
     set t_IE=(B
