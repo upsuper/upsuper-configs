@@ -62,7 +62,7 @@ hi Type       guifg=#e5a00d gui=italic
 hi Structure  guifg=#007020 gui=italic
 hi Function   guifg=#06287e gui=italic
 
-hi Identifier guifg=#2c5c87 guibg=#bbd3e8 gui=italic
+hi Identifier guifg=#2c5c87 guibg=#dae7f3 gui=italic
 
 hi Repeat      guifg=#7fbf58 gui=bold
 hi Conditional guifg=#4c8f2f gui=bold
