@@ -49,7 +49,7 @@ if has("gui")
     if has("gui_gtk2")
         color warm_grey
     elseif has("gui_macvim")
-        color tidy
+        color pyte
     end
 endif
 
