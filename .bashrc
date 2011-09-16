@@ -50,6 +50,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
+    export CLICOLOR=yes
     PS1='${debian_chroot:+($debian_chroot)}\[\e[0m\]`a=$?;if [ $a -ne 0 ];then a="  "$a; echo -ne "\[\e[s\e[1A\e[$((COLUMNS-2))G\e[31m\e[1;41m${a:(-3)}\e[u\]\[\e[0m\e[7m\e[2m\]";fi`\[\e[1;32m\]\u@\h:`b=$(git branch 2>/dev/null | sed -e "/^ /d" -e "s/* \(.*\)/\1/"); if [ "$b" != "" ]; then echo -ne "\[\e[0m\e[1;33m\]$b>\[\e[0m\]"; fi;`\[\e[0m\e[1;34m\]\W\[\e[1;34m\]\$ \[\e[0m\]'
     # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else

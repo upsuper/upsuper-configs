@@ -45,7 +45,7 @@ if has("gui")
     set guioptions-=T
     set guioptions-=r
     set guioptions-=L
-    "color desert
+    set lines=24 columns=80
     if has("gui_gtk2")
         color warm_grey
     elseif has("gui_macvim")
