@@ -25,7 +25,9 @@ set splitright
 
 set noimdisable
 set iminsert=0
+set imsearch=-1
 inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
+nmap <silent> <ESC> :nohlsearch<CR>
 
 set formatoptions+=m
 "set complete=.
