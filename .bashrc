@@ -110,8 +110,10 @@ GAE_PATH=$HOME/bin/google_appengine
 [ -d "$GAE_PATH" ] && PATH="$PATH:$GAE_PATH"
 ANDROID_SDK_PATH=$HOME/bin/android-sdk-linux_x86/tools
 [ -d "$ANDROID_SDK_PATH" ] && PATH="$PATH:$ANDROID_SDK_PATH"
+NODE_BIN=$HOME/node_modules/.bin
+[ -d $NODE_BIN ] && PATH="$NODE_BIN:$PATH"
 HOME_BIN=$HOME/bin
-[ -d $HOME_BIN ] && PATH="$HOME/bin:$PATH"
+[ -d $HOME_BIN ] && PATH="$HOME_BIN:$PATH"
 export PATH
 
 # if [[ $(tty) = /dev/tty* ]]; then
@@ -134,3 +136,11 @@ export DEBEMAIL DEBFULLNAME
 EDITOR=vim
 HGMERGE=meld
 export EDITOR HGMERGE
+
+c()
+{
+    bc <<EOF
+scale=3
+$*
+EOF
+}
