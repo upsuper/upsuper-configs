@@ -144,3 +144,8 @@ scale=3
 $*
 EOF
 }
+
+simple_prompt()
+{
+    PS1='\[\e[1;32m\]\w\[\e[1;34m\]$ \[\e[0m\]'
+}
