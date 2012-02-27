@@ -56,3 +56,6 @@ if has("gui_gtk2")
     set guifont=DejaVu\ Sans\ Mono\ 10
     set guifontwide=WenQuanYi\ MicroHei\ 10
 endif
+
+highlight WhitespaceEOL ctermbg=red guibg=#ff6666
+match WhitespaceEOL /\s\+$/
