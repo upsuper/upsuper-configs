@@ -114,6 +114,8 @@ NODE_BIN=$HOME/node_modules/.bin
 [ -d $NODE_BIN ] && PATH="$NODE_BIN:$PATH"
 HOME_BIN=$HOME/bin
 [ -d $HOME_BIN ] && PATH="$HOME_BIN:$PATH"
+PDK_GCC_BIN=/opt/PalmPDK/arm-gcc/bin
+[-d $PDK_GCC_BIN ] && PATH="$PATH:$PDK_GCC_BIN"
 export PATH
 
 # if [[ $(tty) = /dev/tty* ]]; then
