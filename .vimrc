@@ -58,4 +58,4 @@ if has("gui_gtk2")
 endif
 
 highlight WhitespaceEOL ctermbg=red guibg=#ff6666
-match WhitespaceEOL /\s\+$/
+match WhitespaceEOL /\S\@<=\s\+$/
