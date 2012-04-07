@@ -93,6 +93,7 @@ fi
 #alias ll='ls -l'
 #alias la='ls -A'
 #alias l='ls -CF'
+alias javac='LC_ALL=en javac'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -118,6 +119,9 @@ PDK_GCC_BIN=/opt/PalmPDK/arm-gcc/bin
 [ -d $PDK_GCC_BIN ] && PATH="$PATH:$PDK_GCC_BIN"
 export PATH
 
+NODE_PATH=/usr/local/lib/node_modules
+export NODE_PATH
+
 # if [[ $(tty) = /dev/tty* ]]; then
 #     export LANG=C
 #     export LANGUAGE=C
@@ -138,6 +142,8 @@ export DEBEMAIL DEBFULLNAME
 EDITOR=vim
 HGMERGE=meld
 export EDITOR HGMERGE
+
+alias "webos-gcc"="arm-none-linux-gnueabi-gcc -I/opt/PalmPDK/include -I/opt/PalmPDK/include/SDL --sysroot=/opt/PalmPDK/arm-gcc/sysroot -L/opt/PalmPDK/device/lib -Wl,--allow-shlib-undefined -lSDL -lGLESv2 -lpdl"
 
 c()
 {
