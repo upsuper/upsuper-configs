@@ -57,8 +57,8 @@ if has("gui_gtk2")
     set guifontwide=WenQuanYi\ MicroHei\ 10
 endif
 
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-set list
+set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
+nmap <leader>l :set list!<CR>
 
 nmap <C-S-Tab> :Stab<CR>
 command! -nargs=* Stab call Stab()
