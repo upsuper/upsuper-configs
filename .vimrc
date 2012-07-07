@@ -57,5 +57,16 @@ if has("gui_gtk2")
     set guifontwide=WenQuanYi\ MicroHei\ 10
 endif
 
-highlight WhitespaceEOL ctermbg=red guibg=#ff6666
-match WhitespaceEOL /\S\@<=\s\+$/
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set list
+
+nmap <C-S-Tab> :Stab<CR>
+command! -nargs=* Stab call Stab()
+function! Stab()
+    let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
+    if l:tabstop > 0
+        let &l:sts = l:tabstop
+        let &l:ts = l:tabstop
+        let &l:sw = l:tabstop
+    endif
+endfunction
