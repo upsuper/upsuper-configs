@@ -1,3 +1,9 @@
 [user]
-	name = upsuper
+	name = Xidorn Quan
 	email = quanxunzhen@gmail.com
+
+[sendemail]
+    smtpencryption = tls
+    smtpserver = smtp.gmail.com
+    smtpuser = quanxunzhen@gmail.com
+    smtpserverport = 587

@@ -3,8 +3,8 @@ set backspace=indent,eol,start
 set ruler
 set showcmd
 set incsearch
-set mouse=
 set hlsearch
+set mouse=
 syntax on
 set autoindent
 set tabstop=4
@@ -22,14 +22,15 @@ set fileencodings=UTF-8,GB18030
 set shortmess=at
 set wildmode=longest,list
 set splitright
+set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
 
+" input method related
 set noimdisable
 set iminsert=0
 set imsearch=-1
 inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 
-set formatoptions+=m
-
+" gui related
 if has("gui")
     set guioptions-=m
     set guioptions-=T
@@ -38,28 +39,54 @@ if has("gui")
     set lines=24 columns=80
     if has("gui_gtk2")
         color warm_grey
+        set guifont=DejaVu\ Sans\ Mono\ 10
+        set guifontwide=WenQuanYi\ MicroHei\ 10
     elseif has("gui_macvim")
         color pyte
     end
 endif
 
-let g:user_zen_leader_key = '<c-e>'
+set formatoptions+=m
 
+" key mappings
+" for zencoding
+let g:user_zen_leader_key = '<c-e>'
+" for normal usage
+nmap <leader>l :set list!<CR>
+" for quickly add & remove comments
 nmap <silent> @c I/*<ESC>A*/<ESC>
 nmap <silent> @d ^xx$xx
+" for quick tab switch
+nmap <silent> <D-t> :tabnew<CR>
+nmap <D-1> 1gt
+nmap <D-2> 2gt
+nmap <D-3> 3gt
+nmap <D-4> 4gt
+nmap <D-5> 5gt
+nmap <D-6> 6gt
+nmap <D-7> 7gt
+nmap <D-8> 8gt
+nmap <D-9> 9gt
+nmap <silent> <D-0> :tablast<CR>
+" for quick window movement
+nmap wn <C-w>n
+nmap ws <C-w>s
+nmap wv <C-w>v
+nmap wh <C-w>h
+nmap wj <C-w>j
+nmap wk <C-w>k
+nmap wl <C-w>l
+nmap wt <C-w>t
+nmap wb <C-w>b
+nmap wp <C-w>p
+nmap wm <C-w><Bar><C-w>_
 
+" fix for terminal
 if !has("gui_running")
     set t_IE=(B
 endif
 
-if has("gui_gtk2")
-    set guifont=DejaVu\ Sans\ Mono\ 10
-    set guifontwide=WenQuanYi\ MicroHei\ 10
-endif
-
-set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
-nmap <leader>l :set list!<CR>
-
+" set tabstop, softtabstop, shiftwidth at the same time
 nmap <C-S-Tab> :Stab<CR>
 command! -nargs=* Stab call Stab()
 function! Stab()
@@ -69,11 +96,4 @@ function! Stab()
         let &l:ts = l:tabstop
         let &l:sw = l:tabstop
     endif
-endfunction
-
-function! LKMode()
-    set softtabstop=8
-    set tabstop=8
-    set shiftwidth=8
-    set noexpandtab
 endfunction
