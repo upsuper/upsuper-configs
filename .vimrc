@@ -6,13 +6,7 @@ set incsearch
 set hlsearch
 set mouse=
 syntax on
-set autoindent
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
 filetype plugin indent on
-set smarttab
 set ignorecase
 set smartcase
 set foldmethod=indent
@@ -24,11 +18,18 @@ set wildmode=longest,list
 set splitright
 set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
 
+" indent related
+set autoindent
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
+
 " input method related
 set noimdisable
 set iminsert=0
 set imsearch=-1
-inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 
 " gui related
 if has("gui")
@@ -36,14 +37,14 @@ if has("gui")
     set guioptions-=T
     set guioptions-=r
     set guioptions-=L
-    set lines=24 columns=80
+    set lines=25 columns=85
     if has("gui_gtk2")
         color warm_grey
         set guifont=DejaVu\ Sans\ Mono\ 10
         set guifontwide=WenQuanYi\ MicroHei\ 10
     elseif has("gui_macvim")
         color pyte
-    end
+    endif
 endif
 
 set formatoptions+=m
@@ -69,17 +70,7 @@ nmap <D-8> 8gt
 nmap <D-9> 9gt
 nmap <silent> <D-0> :tablast<CR>
 " for quick window movement
-nmap wn <C-w>n
-nmap ws <C-w>s
-nmap wv <C-w>v
-nmap wh <C-w>h
-nmap wj <C-w>j
-nmap wk <C-w>k
-nmap wl <C-w>l
-nmap wt <C-w>t
-nmap wb <C-w>b
-nmap wp <C-w>p
-nmap wm <C-w><Bar><C-w>_
+nmap <C-w>m <C-w><Bar><C-w>_
 
 " fix for terminal
 if !has("gui_running")
@@ -97,3 +88,24 @@ function! Stab()
         let &l:sw = l:tabstop
     endif
 endfunction
+
+if has("autocmd")
+    " set indents
+    autocmd FileType yaml   setl ts=2 sts=2 sw=2 et
+    autocmd FileType python setl ts=4 sts=4 sw=4 et
+
+    " set foldmethods
+    autocmd FileType yaml   setl fdm=indent
+    autocmd FileType python setl fdm=indent
+    autocmd FileType c      setl fdm=syntax
+    autocmd FileType cpp    setl fdm=syntax
+    autocmd FileType java   setl fdm=syntax
+
+    " close im when leave insert mode
+    autocmd InsertLeave * set iminsert=0
+
+    " Linux Kernel code style
+    function! LKStyle()
+        set ts=8 sts=8 sw=8 noet
+    endfunction
+endif
