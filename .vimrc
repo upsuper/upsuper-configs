@@ -14,9 +14,11 @@ set number
 set ambiwidth=double
 set fileencodings=UTF-8,GB18030
 set shortmess=at
-set wildmode=longest,list
 set splitright
 set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
+
+set wildmode=list:longest
+set wildignore=*.o,*.d
 
 " indent related
 set autoindent
@@ -93,6 +95,7 @@ if has("autocmd")
     " set indents
     autocmd FileType yaml   setl ts=2 sts=2 sw=2 et
     autocmd FileType python setl ts=4 sts=4 sw=4 et
+    autocmd FileType make   setl ts=8 sts=8 sw=8 noet
 
     " set foldmethods
     autocmd FileType yaml   setl fdm=indent

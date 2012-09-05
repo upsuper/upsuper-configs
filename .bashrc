@@ -145,6 +145,7 @@ export DEBEMAIL DEBFULLNAME
 EDITOR=vim
 HGMERGE=meld
 export EDITOR HGMERGE
+export PGHOST=localhost
 
 alias "webos-gcc"="arm-none-linux-gnueabi-gcc -I/opt/PalmPDK/include -I/opt/PalmPDK/include/SDL --sysroot=/opt/PalmPDK/arm-gcc/sysroot -L/opt/PalmPDK/device/lib -Wl,--allow-shlib-undefined -lSDL -lGLESv2 -lpdl"
 
