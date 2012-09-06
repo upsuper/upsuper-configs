@@ -59,14 +59,14 @@ fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    # PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+#case "$TERM" in
+#xterm*|rxvt*)
+#    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+#    # PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+#    ;;
+#*)
+#    ;;
+#esac
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -110,16 +110,14 @@ if [ -f $HOME/.profile ]; then
 fi
 
 # set PATH so it includes user's private bin if it exists
-GAE_PATH=$HOME/bin/google_appengine
-[ -d "$GAE_PATH" ] && PATH="$PATH:$GAE_PATH"
-ANDROID_SDK_PATH=$HOME/bin/android-sdk-linux_x86/tools
-[ -d "$ANDROID_SDK_PATH" ] && PATH="$PATH:$ANDROID_SDK_PATH"
+#GAE_PATH=$HOME/bin/google_appengine
+#[ -d "$GAE_PATH" ] && PATH="$PATH:$GAE_PATH"
+#ANDROID_SDK_PATH=$HOME/bin/android-sdk-linux_x86/tools
+#[ -d "$ANDROID_SDK_PATH" ] && PATH="$PATH:$ANDROID_SDK_PATH"
 NODE_BIN=$HOME/node_modules/.bin
 [ -d $NODE_BIN ] && PATH="$NODE_BIN:$PATH"
 HOME_BIN=$HOME/bin
 [ -d $HOME_BIN ] && PATH="$HOME_BIN:$PATH"
-PDK_GCC_BIN=/opt/PalmPDK/arm-gcc/bin
-[ -d $PDK_GCC_BIN ] && PATH="$PATH:$PDK_GCC_BIN"
 export PATH
 
 NODE_PATH=/usr/local/lib/node_modules
@@ -136,26 +134,15 @@ CDPATH=.:$HOME:$HOME/Projects
 
 CHS_COMPLETION=$HOME/bin/chs_completion
 [ -e "$CHS_COMPLETION" ] && . "$CHS_COMPLETION"
-HG_COMPLETION=$HOME/.hg_files/bash-completion-hg
-[ -e "$HG_COMPLETION" ] && . "$HG_COMPLETION"
 
-DEBEMAIL=quanxunzhen@gmail.com
-DEBFULLNAME="Quan Xunzhen"
-export DEBEMAIL DEBFULLNAME
 EDITOR=vim
 HGMERGE=meld
 export EDITOR HGMERGE
 export PGHOST=localhost
 
-alias "webos-gcc"="arm-none-linux-gnueabi-gcc -I/opt/PalmPDK/include -I/opt/PalmPDK/include/SDL --sysroot=/opt/PalmPDK/arm-gcc/sysroot -L/opt/PalmPDK/device/lib -Wl,--allow-shlib-undefined -lSDL -lGLESv2 -lpdl"
-
-c()
-{
-    bc <<EOF
-scale=3
-$*
-EOF
-}
+if [ $(uname -s) = Darwin ]; then
+    export MAKEFLAGS=-j$(sysctl -n hw.ncpu)
+fi
 
 simple_prompt()
 {
