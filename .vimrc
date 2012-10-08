@@ -99,10 +99,14 @@ if has("autocmd")
 
     " set foldmethods
     autocmd FileType yaml   setl fdm=indent
+    autocmd FileType html   setl fdm=indent
     autocmd FileType python setl fdm=indent
     autocmd FileType c      setl fdm=syntax
     autocmd FileType cpp    setl fdm=syntax
+    autocmd FileType objc   setl fdm=syntax
     autocmd FileType java   setl fdm=syntax
+    autocmd FileType man    setl nofen
+    autocmd FileType javascript setl fdm=syntax
 
     " close im when leave insert mode
     autocmd InsertLeave * set iminsert=0
