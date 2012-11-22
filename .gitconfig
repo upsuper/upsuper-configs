@@ -1,6 +1,7 @@
 [user]
 	name = Xidorn Quan
 	email = quanxunzhen@gmail.com
+	signingkey = 7C9A1209
 
 [sendemail]
     smtpencryption = tls
