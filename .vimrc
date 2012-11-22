@@ -28,6 +28,12 @@ set shiftwidth=4
 set expandtab
 set smarttab
 
+" enable folding
+let php_folding=1
+let sh_fold_enabled=1
+let vimsyn_folding=1
+let xml_syntax_folding=1
+
 " input method related
 set noimdisable
 set iminsert=0
@@ -101,12 +107,13 @@ if has("autocmd")
     autocmd FileType yaml   setl fdm=indent
     autocmd FileType html   setl fdm=indent
     autocmd FileType python setl fdm=indent
+    autocmd FileType javascript setl fdm=indent
     autocmd FileType c      setl fdm=syntax
     autocmd FileType cpp    setl fdm=syntax
     autocmd FileType objc   setl fdm=syntax
     autocmd FileType java   setl fdm=syntax
+    autocmd FileType xml    setl fdm=syntax
     autocmd FileType man    setl nofen
-    autocmd FileType javascript setl fdm=syntax
 
     " close im when leave insert mode
     autocmd InsertLeave * set iminsert=0
