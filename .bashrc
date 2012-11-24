@@ -135,13 +135,23 @@ CDPATH=.:$HOME:$HOME/Projects
 CHS_COMPLETION=$HOME/bin/chs_completion
 [ -e "$CHS_COMPLETION" ] && . "$CHS_COMPLETION"
 
-EDITOR=vim
-HGMERGE=meld
-export EDITOR HGMERGE
+export HGMERGE=meld
 export PGHOST=localhost
 
-if [ $(uname -s) = Darwin ]; then
-    export MAKEFLAGS=-j$(sysctl -n hw.ncpu)
+# System specific
+case "$(uname -s)" in
+    Darwin)
+        NPROC=$(sysctl -n hw.ncpu)
+        EDITOR="mvim -f"
+        ;;
+    Linux)
+        NPROC=$(nproc)
+        EDITOR=vim
+        ;;
+esac
+export EDITOR
+if [ "x$NPROC" != "x" ]; then
+    export MAKEFLAGS=-j$NPROC
 fi
 
 simple_prompt()
