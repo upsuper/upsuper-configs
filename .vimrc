@@ -116,7 +116,7 @@ if has("autocmd")
     autocmd FileType yaml   setl fdm=indent
     autocmd FileType html   setl fdm=indent
     autocmd FileType python setl fdm=indent
-    autocmd FileType javascript setl fdm=indent
+    autocmd FileType javascript setl fdm=syntax
     autocmd FileType c      setl fdm=syntax
     autocmd FileType cpp    setl fdm=syntax
     autocmd FileType objc   setl fdm=syntax
