@@ -26,6 +26,7 @@ call vundle#rc()
 
 " Bundles
 Bundle 'gmarik/vundle'
+Bundle 'pangloss/vim-javascript'
 
 " indent related
 set autoindent
