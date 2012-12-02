@@ -28,6 +28,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'pangloss/vim-javascript'
 Bundle 'mattn/zencoding-vim'
+Bundle 'gmarik/sudo-gui.vim'
 
 " set html indent
 let g:html_indent_inctags = 'body,head,tbody'
