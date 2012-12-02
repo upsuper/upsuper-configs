@@ -6,7 +6,6 @@ set incsearch
 set hlsearch
 set mouse=
 syntax on
-filetype plugin indent on
 set ignorecase
 set smartcase
 set foldmethod=indent
@@ -35,6 +34,7 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set smarttab
+filetype plugin indent on
 
 " enable folding
 let php_folding=1
