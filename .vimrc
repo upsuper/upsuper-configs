@@ -20,6 +20,14 @@ set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
 set wildmode=list:longest
 set wildignore=*.o,*.d
 
+" for Vundle
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Bundles
+Bundle 'gmarik/vundle'
+
 " indent related
 set autoindent
 set tabstop=4
