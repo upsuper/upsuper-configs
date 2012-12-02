@@ -28,6 +28,11 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'pangloss/vim-javascript'
 
+" set html indent
+let g:html_indent_inctags = 'body,head,tbody'
+let g:html_indent_script1 = 'inc'
+let g:html_indent_style1 = 'inc'
+
 " indent related
 set autoindent
 set tabstop=4
