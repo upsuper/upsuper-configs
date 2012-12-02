@@ -4,7 +4,7 @@
 	signingkey = 7C9A1209
 
 [sendemail]
-    smtpencryption = tls
-    smtpserver = smtp.gmail.com
-    smtpuser = quanxunzhen@gmail.com
-    smtpserverport = 587
+	smtpencryption = tls
+	smtpserver = smtp.gmail.com
+	smtpuser = quanxunzhen@gmail.com
+	smtpserverport = 587
