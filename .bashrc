@@ -109,51 +109,6 @@ if [ -f $HOME/.profile ]; then
     . $HOME/.profile
 fi
 
-# set PATH so it includes user's private bin if it exists
-#GAE_PATH=$HOME/bin/google_appengine
-#[ -d "$GAE_PATH" ] && PATH="$PATH:$GAE_PATH"
-#ANDROID_SDK_PATH=$HOME/bin/android-sdk-linux_x86/tools
-#[ -d "$ANDROID_SDK_PATH" ] && PATH="$PATH:$ANDROID_SDK_PATH"
-NODE_BIN=$HOME/node_modules/.bin
-[ -d $NODE_BIN ] && PATH="$NODE_BIN:$PATH"
-HOME_BIN=$HOME/bin
-[ -d $HOME_BIN ] && PATH="$HOME_BIN:$PATH"
-export PATH
-
-NODE_PATH=/usr/local/lib/node_modules
-export NODE_PATH
-
-# if [[ $(tty) = /dev/tty* ]]; then
-#     export LANG=C
-#     export LANGUAGE=C
-# else
-#     export LANG="zh_CN.UTF-8"
-# fi
-
-CDPATH=.:$HOME:$HOME/Projects
-
-CHS_COMPLETION=$HOME/bin/chs_completion
-[ -e "$CHS_COMPLETION" ] && . "$CHS_COMPLETION"
-
-export HGMERGE=meld
-export PGHOST=localhost
-
-# System specific
-case "$(uname -s)" in
-    Darwin)
-        NPROC=$(sysctl -n hw.ncpu)
-        EDITOR="mvim -f"
-        ;;
-    Linux)
-        NPROC=$(nproc)
-        EDITOR=vim
-        ;;
-esac
-export EDITOR
-if [ "x$NPROC" != "x" ]; then
-    export MAKEFLAGS=-j$NPROC
-fi
-
 simple_prompt()
 {
     PS1='\[\e[1;32m\]\w\[\e[1;34m\]$ \[\e[0m\]'
