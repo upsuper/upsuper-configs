@@ -11,3 +11,6 @@
 
 [github]
 	user = upsuper
+
+[push]
+	default = simple
