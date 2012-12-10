@@ -8,3 +8,6 @@
 	smtpserver = smtp.gmail.com
 	smtpuser = quanxunzhen@gmail.com
 	smtpserverport = 587
+
+[github]
+	user = upsuper
