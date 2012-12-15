@@ -47,3 +47,5 @@ if [ -d $HOME/.virtualenvs ]; then
         . virtualenvwrapper.sh
     fi
 fi
+
+compctl -g '(^(*.o|*.d))' vim mvim
