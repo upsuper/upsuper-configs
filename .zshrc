@@ -40,3 +40,10 @@ source $ZSH/oh-my-zsh.sh
 if [ -f $HOME/.profile ]; then
     . $HOME/.profile
 fi
+
+if [ -d $HOME/.virtualenvs ]; then
+    if [ -f `which virtualenvwrapper.sh` ]; then
+        export VIRTUAL_ENV_DISABLE_PROMPT=1
+        . virtualenvwrapper.sh
+    fi
+fi
