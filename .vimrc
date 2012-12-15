@@ -114,6 +114,9 @@ function! Stab()
 endfunction
 
 if has("autocmd")
+    " override filetype
+    autocmd BufRead,BufNewFile *.zsh-theme setl ft=zsh
+
     " set indents
     autocmd FileType yaml   setl ts=2 sts=2 sw=2 et
     autocmd FileType python setl ts=4 sts=4 sw=4 et
