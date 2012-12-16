@@ -36,7 +36,7 @@ plugins=(vi-mode)
 # for auto-loading
 plugins+=(virtualenvwrapper)
 # for auto-completion
-plugins+=(brew npm pip)
+plugins+=(brew npm pip gem)
 
 source $ZSH/oh-my-zsh.sh
 
