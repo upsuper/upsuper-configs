@@ -32,20 +32,17 @@ ZSH_THEME="upsuper"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew vi-mode)
+plugins=(vi-mode)
+# for auto-loading
+plugins+=(virtualenvwrapper)
+# for auto-completion
+plugins+=(brew npm pip)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 if [ -f $HOME/.profile ]; then
     . $HOME/.profile
-fi
-
-if [ -d $HOME/.virtualenvs ]; then
-    if [ -f `which virtualenvwrapper.sh` ]; then
-        export VIRTUAL_ENV_DISABLE_PROMPT=1
-        . virtualenvwrapper.sh
-    fi
 fi
 
 compctl -g '(^(*.o|*.d))' vim mvim
