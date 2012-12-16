@@ -32,7 +32,7 @@ ZSH_THEME="upsuper"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(vi-mode)
+plugins=(notify cmdnotify vi-mode)
 # for auto-loading
 plugins+=(virtualenvwrapper)
 # for auto-completion
