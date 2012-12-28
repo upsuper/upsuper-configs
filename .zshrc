@@ -41,8 +41,17 @@ plugins+=(brew npm pip gem)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-if [ -f $HOME/.profile ]; then
+if [[ -f $HOME/.profile ]]; then
     . $HOME/.profile
 fi
 
+# Completion
+if [[ -d /usr/local/share/zsh-completions ]]; then
+    fpath=(/usr/local/share/zsh-completions $fpath)
+fi
+_comp_options+=(globdots)
 compctl -g '(^(*.o|*.d))' vim mvim
+
+# Some emacs keybindings in vi mode
+bindkey -v '^a' beginning-of-line
+bindkey -v '^e' end-of-line
