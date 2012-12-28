@@ -15,6 +15,7 @@ set fileencodings=UTF-8,GB18030
 set shortmess=at
 set splitright
 set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
+set visualbell
 
 set wildmode=list:longest
 set wildignore=*.o,*.d
