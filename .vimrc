@@ -30,6 +30,7 @@ Bundle 'gmarik/vundle'
 Bundle 'pangloss/vim-javascript'
 Bundle 'mattn/zencoding-vim'
 Bundle 'gmarik/sudo-gui.vim'
+Bundle 'Rip-Rip/clang_complete'
 
 " set html indent
 let g:html_indent_inctags = 'body,head,tbody'
@@ -144,3 +145,9 @@ if has("autocmd")
         set ts=8 sts=8 sw=8 noet
     endfunction
 endif
+
+" autocomplete
+set completeopt=menu
+let g:clang_auto_select=1
+let g:clang_use_library=1
+let g:clang_sort_algo='alpha'
