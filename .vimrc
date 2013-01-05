@@ -122,6 +122,7 @@ if has("autocmd")
     autocmd FileType yaml   setl ts=2 sts=2 sw=2 et
     autocmd FileType python setl ts=4 sts=4 sw=4 et
     autocmd FileType make   setl ts=8 sts=8 sw=8 noet
+    autocmd FileType gitconfig  setl noet
 
     " set foldmethods
     autocmd FileType yaml   setl fdm=indent
