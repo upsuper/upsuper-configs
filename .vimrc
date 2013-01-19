@@ -33,6 +33,8 @@ Bundle 'gmarik/sudo-gui.vim'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'me-vlad/python-syntax.vim'
 Bundle 'othree/html5.vim'
+" My bundles
+Bundle 'upsuper/vim-colorschemes'
 
 " set html indent
 let g:html_indent_inctags = 'body,head,tbody'
@@ -67,11 +69,11 @@ if has("gui")
     set guioptions-=L
     set lines=25 columns=85
     if has("gui_gtk2")
-        color warm_grey
+        silent! color warm_grey
         set guifont=DejaVu\ Sans\ Mono\ 10
         set guifontwide=WenQuanYi\ MicroHei\ 10
     elseif has("gui_macvim")
-        color pyte
+        silent! color pyte
     endif
 endif
 
