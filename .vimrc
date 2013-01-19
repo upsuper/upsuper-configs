@@ -31,6 +31,8 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'mattn/zencoding-vim'
 Bundle 'gmarik/sudo-gui.vim'
 Bundle 'Rip-Rip/clang_complete'
+Bundle 'me-vlad/python-syntax.vim'
+Bundle 'othree/html5.vim'
 
 " set html indent
 let g:html_indent_inctags = 'body,head,tbody'
@@ -123,6 +125,7 @@ if has("autocmd")
     autocmd FileType yaml   setl ts=2 sts=2 sw=2 et
     autocmd FileType python setl ts=4 sts=4 sw=4 et
     autocmd FileType make   setl ts=8 sts=8 sw=8 noet
+    autocmd FileType conf   setl ts=8 sts=8 sw=8 noet
     autocmd FileType gitconfig  setl noet
 
     " set foldmethods
@@ -151,3 +154,6 @@ set completeopt=menu
 let g:clang_auto_select=1
 let g:clang_use_library=1
 let g:clang_sort_algo='alpha'
+
+" python syntax highlight
+let g:python_slow_sync=1
