@@ -1,3 +1,5 @@
+autocmd! BufWritePost .vimrc source %
+
 set nocompatible
 set backspace=indent,eol,start
 set ruler
@@ -16,6 +18,7 @@ set shortmess=at
 set splitright
 set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
 set visualbell
+set clipboard=unnamed
 
 set wildmode=list:longest
 set wildignore=*.o,*.d
@@ -48,6 +51,7 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set smarttab
+set shiftround
 filetype plugin indent on
 
 " enable folding
@@ -100,6 +104,10 @@ nmap <D-8> 8gt
 nmap <D-9> 9gt
 nmap <silent> <D-0> :tablast<CR>
 " for quick window movement
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+map <C-h> <C-w>h
 nmap <C-w>m <C-w><Bar><C-w>_
 
 " fix for terminal
