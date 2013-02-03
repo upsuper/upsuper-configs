@@ -119,37 +119,35 @@ function! Stab()
     endif
 endfunction
 
-if has("autocmd")
-    " override filetype
-    autocmd BufRead,BufNewFile *.zsh-theme setl ft=zsh
+" override filetype
+autocmd BufRead,BufNewFile *.zsh-theme setl ft=zsh
 
-    " set indents
-    autocmd FileType yaml   setl ts=2 sts=2 sw=2 et
-    autocmd FileType python setl ts=4 sts=4 sw=4 et
-    autocmd FileType make   setl ts=8 sts=8 sw=8 noet
-    autocmd FileType conf   setl ts=8 sts=8 sw=8 noet
-    autocmd FileType gitconfig  setl noet
+" set indents
+autocmd FileType yaml   setl ts=2 sts=2 sw=2 et
+autocmd FileType python setl ts=4 sts=4 sw=4 et
+autocmd FileType make   setl ts=8 sts=8 sw=8 noet
+autocmd FileType conf   setl ts=8 sts=8 sw=8 noet
+autocmd FileType gitconfig  setl noet
 
-    " set foldmethods
-    autocmd FileType yaml   setl fdm=indent
-    autocmd FileType html   setl fdm=indent
-    autocmd FileType python setl fdm=indent
-    autocmd FileType javascript setl fdm=syntax
-    autocmd FileType c      setl fdm=syntax
-    autocmd FileType cpp    setl fdm=syntax
-    autocmd FileType objc   setl fdm=syntax
-    autocmd FileType java   setl fdm=syntax
-    autocmd FileType xml    setl fdm=syntax
-    autocmd FileType man    setl nofen
+" set foldmethods
+autocmd FileType yaml   setl fdm=indent
+autocmd FileType html   setl fdm=indent
+autocmd FileType python setl fdm=indent
+autocmd FileType javascript setl fdm=syntax
+autocmd FileType c      setl fdm=syntax
+autocmd FileType cpp    setl fdm=syntax
+autocmd FileType objc   setl fdm=syntax
+autocmd FileType java   setl fdm=syntax
+autocmd FileType xml    setl fdm=syntax
+autocmd FileType man    setl nofen
 
-    " close im when leave insert mode
-    autocmd InsertLeave * set iminsert=0
+" close im when leave insert mode
+autocmd InsertLeave * set iminsert=0
 
-    " Linux Kernel code style
-    function! LKStyle()
-        set ts=8 sts=8 sw=8 noet
-    endfunction
-endif
+" Linux Kernel code style
+function! LKStyle()
+    set ts=8 sts=8 sw=8 noet
+endfunction
 
 " autocomplete
 set completeopt=menu
