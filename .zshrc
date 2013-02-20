@@ -50,7 +50,7 @@ if [[ -d /usr/local/share/zsh-completions ]]; then
     fpath=(/usr/local/share/zsh-completions $fpath)
 fi
 _comp_options+=(globdots)
-compctl -g '(^(*.o|*.d))' vim mvim
+compctl -g '(^(*.o|*.d|*.pyc|*.swp))' vim mvim
 
 # Some emacs keybindings in vi mode
 bindkey -v '^a' beginning-of-line
