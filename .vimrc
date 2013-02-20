@@ -108,7 +108,10 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 map <C-h> <C-w>h
-nmap <C-w>m <C-w><Bar><C-w>_
+map <C-_> <C-w>_
+map <C-\> <C-w><Bar>
+" convient folding
+nnoremap <Space> za
 
 " fix for terminal
 if !has("gui_running")
