@@ -1,2 +1,9 @@
 [ui]
 username = Xidorn Quan <quanxunzhen@gmail.com>
+
+[web]
+cacerts = /etc/hg-dummy-cert.pem
+
+[extensions]
+purge =
+hggit = ~/Projects/hg-git/hggit
