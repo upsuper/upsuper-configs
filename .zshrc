@@ -36,7 +36,7 @@ plugins=(notify cmdnotify vi-mode)
 # for auto-loading
 plugins+=(virtualenvwrapper)
 # for auto-completion
-plugins+=(brew npm pip gem)
+#plugins+=(brew npm pip gem)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -49,8 +49,11 @@ fi
 if [[ -d /usr/local/share/zsh-completions ]]; then
     fpath=(/usr/local/share/zsh-completions $fpath)
 fi
+compctl -g '(^(*.o|*.d|*.pyc|*.swp))' vim mvim subl
+
+autoload -Uz compinit
+compinit
 _comp_options+=(globdots)
-compctl -g '(^(*.o|*.d|*.pyc|*.swp))' vim mvim
 
 # Some emacs keybindings in vi mode
 bindkey -v '^a' beginning-of-line
