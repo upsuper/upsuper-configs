@@ -3,3 +3,4 @@
 .clang_complete
 *.xcodeproj/project.xcworkspace/
 *.xcodeproj/xcuserdata/
+.netrwhist
