@@ -36,6 +36,7 @@ Bundle 'gmarik/sudo-gui.vim'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'me-vlad/python-syntax.vim'
 Bundle 'othree/html5.vim'
+Bundle 'groenewege/vim-less'
 " My bundles
 Bundle 'upsuper/vim-colorschemes'
 
@@ -135,10 +136,15 @@ autocmd BufRead,BufNewFile *.zsh-theme setl ft=zsh
 
 " set indents
 autocmd FileType yaml   setl ts=2 sts=2 sw=2 et
+autocmd FileType ruby   setl ts=2 sts=2 sw=2 et
+autocmd FileType css    setl ts=2 sts=2 sw=2 et
+autocmd FileType less   setl ts=2 sts=2 sw=2 et
 autocmd FileType python setl ts=4 sts=4 sw=4 et
 autocmd FileType make   setl ts=8 sts=8 sw=8 noet
 autocmd FileType conf   setl ts=8 sts=8 sw=8 noet
+autocmd FileType c      setl ts=8 sts=8 sw=8 noet list
 autocmd FileType gitconfig  setl noet
+autocmd FileType javascript setl ts=2 sts=2 sw=2 et
 
 " set foldmethods
 autocmd FileType yaml   setl fdm=indent
