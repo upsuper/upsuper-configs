@@ -1,9 +1,18 @@
 [ui]
 username = Xidorn Quan <quanxunzhen@gmail.com>
 
+[defaults]
+qnew = -Ue
+
 [web]
 cacerts = /etc/hg-dummy-cert.pem
 
 [extensions]
+mq =
 purge =
 hggit = ~/Projects/hg-git/hggit
+
+[diff]
+git = 1
+showfunc = 1
+unified = 8
