@@ -14,5 +14,9 @@
 
 [push]
 	default = simple
+
 [merge]
 	tool = mvimdiff -f
+
+[credential]
+	helper = osxkeychain
