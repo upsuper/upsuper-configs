@@ -20,6 +20,8 @@ CDPATH=.:$HOME:$HOME/Projects
 CHS_COMPLETION=$HOME/bin/chs_completion
 [ -e "$CHS_COMPLETION" ] && . "$CHS_COMPLETION"
 
+export CCACHE_COMPRESS=""
+
 export HGMERGE=meld
 export PGHOST=localhost
 
