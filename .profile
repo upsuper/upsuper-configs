@@ -38,5 +38,9 @@ case "$(uname -s)" in
 esac
 export EDITOR
 if [ "x$NPROC" != "x" ]; then
-    export MAKEFLAGS=-j$NPROC
+    #export MAKEFLAGS=-j$NPROC
 fi
+
+# Personal Information
+export CHANGE_LOG_NAME="Xidorn Quan"
+export EMAIL_ADDRESS="quanxunzhen@gmail.com"
