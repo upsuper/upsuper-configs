@@ -139,8 +139,10 @@ autocmd BufRead,BufNewFile *.zsh-theme setl ft=zsh
 " set indents
 autocmd FileType yaml   setl ts=2 sts=2 sw=2 et
 autocmd FileType ruby   setl ts=2 sts=2 sw=2 et
+autocmd FileType html   setl ts=2 sts=2 sw=2 et
 autocmd FileType css    setl ts=2 sts=2 sw=2 et
 autocmd FileType less   setl ts=2 sts=2 sw=2 et
+autocmd FileType cpp    setl ts=2 sts=2 sw=2 et
 autocmd FileType python setl ts=4 sts=4 sw=4 et
 autocmd FileType make   setl ts=8 sts=8 sw=8 noet
 autocmd FileType conf   setl ts=8 sts=8 sw=8 noet
