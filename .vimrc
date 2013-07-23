@@ -37,6 +37,8 @@ Bundle 'Rip-Rip/clang_complete'
 Bundle 'me-vlad/python-syntax.vim'
 Bundle 'othree/html5.vim'
 Bundle 'groenewege/vim-less'
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-session'
 " My bundles
 Bundle 'upsuper/vim-colorschemes'
 
@@ -174,3 +176,7 @@ let g:clang_sort_algo='alpha'
 
 " python syntax highlight
 let g:python_slow_sync=1
+
+" vim-session
+let g:session_autoload='yes'
+let g:session_autosave='yes'

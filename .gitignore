@@ -2,3 +2,4 @@
 .vim/.netrwhist
 *.swp
 .vim/bundle/
+.vim/sessions/
