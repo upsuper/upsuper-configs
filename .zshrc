@@ -38,6 +38,8 @@ plugins+=(virtualenvwrapper)
 # for auto-completion
 #plugins+=(brew npm pip gem)
 
+DISABLE_VENV_CD=1
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
