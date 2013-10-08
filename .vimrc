@@ -170,6 +170,16 @@ function! LKStyle()
     set ts=8 sts=8 sw=8 noet
 endfunction
 
+" JSON Format
+command! JSONFormat call JSONFormat()
+function! JSONFormat()
+    execute '%!python -m json.tool'
+    execute '%!python -c "import re, sys;
+                \ sys.stdout.write(re.sub(r\"\\\\u([0-9a-f]{4})\",
+                \ lambda x: unichr(int(x.group(1), 16)).encode(\"UTF-8\"),
+                \ sys.stdin.read()))"'
+endfunction
+
 " autocomplete
 set completeopt=menu
 let g:clang_auto_select=1
