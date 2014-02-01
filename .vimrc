@@ -163,6 +163,14 @@ autocmd FileType java   setl fdm=syntax
 autocmd FileType xml    setl fdm=syntax
 autocmd FileType man    setl nofen
 
+" close syntex fold if file is too long
+function! DisableSyntaxFoldForLongFile()
+    if &l:foldmethod == 'syntax' && line('$') > 1000
+        setl fdm=indent
+    endif
+endfunction
+autocmd FileType * call DisableSyntaxFoldForLongFile()
+
 " close im when leave insert mode
 autocmd InsertLeave * set iminsert=0
 
