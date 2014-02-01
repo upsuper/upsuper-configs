@@ -135,6 +135,7 @@ endfunction
 
 " override filetype
 autocmd BufRead,BufNewFile *.zsh-theme setl ft=zsh
+autocmd BufRead,BufNewFile *.ejs setl ft=html
 
 " set indents
 autocmd FileType yaml   setl ts=2 sts=2 sw=2 et
