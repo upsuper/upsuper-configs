@@ -1,5 +1,6 @@
 [ui]
 username = Xidorn Quan <quanxunzhen@gmail.com>
+ignore = ~/.config/hg/ignore
 
 [defaults]
 qnew = -Ue
