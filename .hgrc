@@ -4,6 +4,7 @@ ignore = ~/.config/hg/ignore
 
 [defaults]
 qnew = -Ue
+qseries = -s
 
 [web]
 cacerts = /etc/hg-dummy-cert.pem
@@ -11,7 +12,13 @@ cacerts = /etc/hg-dummy-cert.pem
 [extensions]
 mq =
 purge =
-hggit = ~/Projects/hg-git/hggit
+pager =
+progress =
+record =
+rebase =
+color =
+share =
+#hggit = ~/Projects/hg-git/hggit
 
 [diff]
 git = 1
