@@ -35,12 +35,16 @@ Bundle 'gmarik/Vundle.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'mattn/emmet-vim'
 Bundle 'gmarik/sudo-gui.vim'
-Bundle 'Rip-Rip/clang_complete'
+"Bundle 'Rip-Rip/clang_complete'
 Bundle 'me-vlad/python-syntax.vim'
 Bundle 'othree/html5.vim'
+Bundle 'tpope/vim-surround'
 Bundle 'groenewege/vim-less'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
+Bundle 'petRUShka/vim-opencl'
+Bundle 'renamer.vim'
+Bundle 'nathanaelkane/vim-indent-guides'
 " My bundles
 Bundle 'upsuper/vim-colorschemes'
 
@@ -59,6 +63,7 @@ set shiftwidth=4
 set expandtab
 set smarttab
 set shiftround
+set cinoptions=l1,g0,(0,W2s,N-s,t0
 filetype plugin indent on
 
 " enable folding
