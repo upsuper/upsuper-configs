@@ -19,6 +19,8 @@ set splitright
 set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
 set visualbell
 set clipboard=unnamed
+set directory=/tmp/upsuper.vimswap
+set autochdir
 
 set wildmode=list:longest
 set wildignore=*.o,*.d
@@ -31,7 +33,7 @@ call vundle#begin()
 " Bundles
 Bundle 'gmarik/Vundle.vim'
 Bundle 'pangloss/vim-javascript'
-Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/emmet-vim'
 Bundle 'gmarik/sudo-gui.vim'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'me-vlad/python-syntax.vim'
@@ -89,8 +91,10 @@ endif
 set formatoptions+=m
 
 " key mappings
-" for zencoding
-let g:user_zen_leader_key = '<c-e>'
+" for emmet
+let g:user_emmet_leader_key = '<c-e>'
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
 " for normal usage
 nmap <leader>l :set list!<CR>
 " for quickly add & remove comments
