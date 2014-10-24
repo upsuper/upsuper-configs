@@ -25,11 +25,11 @@ set wildignore=*.o,*.d
 
 " for Vundle
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " Bundles
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'mattn/zencoding-vim'
 Bundle 'gmarik/sudo-gui.vim'
@@ -41,6 +41,8 @@ Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
 " My bundles
 Bundle 'upsuper/vim-colorschemes'
+
+call vundle#end()
 
 " set html indent
 let g:html_indent_inctags = 'body,head,tbody'
