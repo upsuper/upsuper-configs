@@ -6,20 +6,27 @@ set ruler
 set showcmd
 set incsearch
 set hlsearch
-set mouse=
+set mouse=nv
 syntax on
 set ignorecase
 set smartcase
 set foldmethod=indent
 set number
 set ambiwidth=double
+set encoding=UTF-8
 set fileencodings=UTF-8,GB18030
+set fileformat=unix
+set fileformats=unix,dos
 set shortmess=at
 set splitright
-set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
+"set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
 set visualbell
 set clipboard=unnamed
-set directory=/tmp/upsuper.vimswap
+if has("win32") || has("win32unix")
+    set directory=C:\tmp\upsuper.vimswap
+else
+    set directory=/tmp/upsuper.vimswap
+endif
 set autochdir
 
 set wildmode=list:longest
@@ -27,28 +34,36 @@ set wildignore=*.o,*.d
 
 " for Vundle
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if has("win32") || has("win32unix")
+    set rtp+=~/vimfiles/bundle/Vundle.vim
+    call vundle#begin('~/vimfiles/bundle')
+else
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+endif
 
 " Bundles
-Bundle 'gmarik/Vundle.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'mattn/emmet-vim'
-Bundle 'gmarik/sudo-gui.vim'
-"Bundle 'Rip-Rip/clang_complete'
-Bundle 'me-vlad/python-syntax.vim'
-Bundle 'othree/html5.vim'
-Bundle 'tpope/vim-surround'
-Bundle 'groenewege/vim-less'
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-session'
-Bundle 'petRUShka/vim-opencl'
-Bundle 'renamer.vim'
-Bundle 'nathanaelkane/vim-indent-guides'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mattn/emmet-vim'
+Plugin 'gmarik/sudo-gui.vim'
+"Plugin 'Rip-Rip/clang_complete'
+Plugin 'me-vlad/python-syntax.vim'
+Plugin 'othree/html5.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'groenewege/vim-less'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
+"Plugin 'petRUShka/vim-opencl'
+Plugin 'renamer.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'rust-lang/rust.vim'
 " My bundles
-Bundle 'upsuper/vim-colorschemes'
+Plugin 'upsuper/vim-colorschemes'
 
 call vundle#end()
+filetype plugin indent on
 
 " set html indent
 let g:html_indent_inctags = 'body,head,tbody'
@@ -90,7 +105,14 @@ if has("gui")
         set guifontwide=WenQuanYi\ MicroHei\ 10
     elseif has("gui_macvim")
         silent! color pyte
+    elseif has("gui_win32")
+        silent! color pyte
+        set noeb novb
+        set guifont=Consolas:h10
+        set guifontwide=MS_Gothic:h10
     endif
+else
+    silent! color pyte
 endif
 
 set formatoptions+=m
@@ -106,17 +128,17 @@ nmap <leader>l :set list!<CR>
 nmap <silent> @c I/*<ESC>A*/<ESC>
 nmap <silent> @d ^xx$xx
 " for quick tab switch
-nmap <silent> <D-t> :tabnew<CR>
-nmap <D-1> 1gt
-nmap <D-2> 2gt
-nmap <D-3> 3gt
-nmap <D-4> 4gt
-nmap <D-5> 5gt
-nmap <D-6> 6gt
-nmap <D-7> 7gt
-nmap <D-8> 8gt
-nmap <D-9> 9gt
-nmap <silent> <D-0> :tablast<CR>
+nmap <silent> <M-t> :tabnew<CR>
+nmap <M-1> 1gt
+nmap <M-2> 2gt
+nmap <M-3> 3gt
+nmap <M-4> 4gt
+nmap <M-5> 5gt
+nmap <M-6> 6gt
+nmap <M-7> 7gt
+nmap <M-8> 8gt
+nmap <M-9> 9gt
+nmap <silent> <M-0> :tablast<CR>
 " for quick window movement
 map <C-j> <C-w>j
 map <C-k> <C-w>k
@@ -155,6 +177,8 @@ autocmd FileType html   setl ts=2 sts=2 sw=2 et
 autocmd FileType css    setl ts=2 sts=2 sw=2 et
 autocmd FileType less   setl ts=2 sts=2 sw=2 et
 autocmd FileType cpp    setl ts=2 sts=2 sw=2 et
+autocmd FileType objc   setl ts=2 sts=2 sw=2 et
+autocmd FileType objcpp setl ts=2 sts=2 sw=2 et
 autocmd FileType python setl ts=4 sts=4 sw=4 et
 autocmd FileType make   setl ts=8 sts=8 sw=8 noet
 autocmd FileType conf   setl ts=8 sts=8 sw=8 noet
@@ -170,13 +194,14 @@ autocmd FileType javascript setl fdm=syntax
 autocmd FileType c      setl fdm=syntax
 autocmd FileType cpp    setl fdm=syntax
 autocmd FileType objc   setl fdm=syntax
+autocmd FileType objcpp setl fdm=syntax
 autocmd FileType java   setl fdm=syntax
 autocmd FileType xml    setl fdm=syntax
 autocmd FileType man    setl nofen
 
 " close syntex fold if file is too long
 function! DisableSyntaxFoldForLongFile()
-    if &l:foldmethod == 'syntax' && line('$') > 1000
+    if &l:foldmethod == 'syntax' && line('$') > 200
         setl fdm=indent
     endif
 endfunction
@@ -210,5 +235,34 @@ let g:clang_sort_algo='alpha'
 let g:python_slow_sync=1
 
 " vim-session
-let g:session_autoload='yes'
+let g:session_autoload='no'
 let g:session_autosave='yes'
+
+if has("gui_win32")
+    cd C:\mozilla-source\central
+endif
+
+if has("gui_win32")
+    let g:window_rect = ''
+    function! ToggleFullscreen()
+        let g:window_rect = libcall('gvimfullscreen', 'ToggleFullscreenWorkspace', g:window_rect)
+    endfunction
+    map <silent> <F11> <Esc>:call ToggleFullscreen()<CR>
+    function! UpdateFullscreen()
+        if g:window_rect != ''
+            call libcallnr('gvimfullscreen', 'ReenterFullscreenWorkspace', 0)
+        endif
+    endfunction
+    map <silent> <S-F11> <ESC>:call UpdateFullscreen()<CR>
+    function! UpdateFullscreenWhenTabCountIs(tabcount)
+        let l:tabnum = tabpagenr('$')
+        if l:tabnum == a:tabcount
+            call UpdateFullscreen()
+        endif
+    endfunction
+    " When we open the second tab, the tab bar would appear, and when we
+    " close one of the only two tabs, the tab bar would disappear. In
+    " those cases, we need to update fullscreen.
+    autocmd TabNew * call UpdateFullscreenWhenTabCountIs(2)
+    "autocmd TabClosed * call UpdateFullscreen(1)
+endif
