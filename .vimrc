@@ -112,7 +112,8 @@ if has("gui")
         silent! color pyte
     elseif has("gui_win32")
         silent! color pyte
-        set noeb novb
+        set noeb visualbell
+        set t_vb=
         set guifont=Consolas:h10
         set guifontwide=MS_Gothic:h10
     endif
