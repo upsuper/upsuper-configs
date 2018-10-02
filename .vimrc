@@ -252,6 +252,17 @@ let g:python_slow_sync=1
 let g:session_autoload='no'
 let g:session_autosave='yes'
 
+function! BufForCompare()
+    setl buftype=nofile
+    setl filetype=cpp
+    diffthis
+    vnew
+    setl buftype=nofile
+    setl filetype=cpp
+    diffthis
+    wincmd h
+endfunction
+
 if has("gui_win32")
     cd C:\mozilla-source\central
 endif
