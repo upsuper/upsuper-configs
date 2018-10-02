@@ -22,8 +22,10 @@ set splitright
 "set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
 set visualbell
 set clipboard=unnamed
-if has("win32") || has("win32unix")
+if has("win32")
     set directory=C:\tmp\upsuper.vimswap
+elseif has("win32unix")
+    set directory=/c/tmp/upsuper.vimswap
 else
     set directory=/tmp/upsuper.vimswap
 endif
