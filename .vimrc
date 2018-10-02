@@ -172,6 +172,8 @@ function! Stab()
     endif
 endfunction
 
+autocmd BufRead * syntax sync fromstart
+
 " override filetype
 autocmd BufRead,BufNewFile *.zsh-theme setl ft=zsh
 autocmd BufRead,BufNewFile *.ejs setl ft=html
