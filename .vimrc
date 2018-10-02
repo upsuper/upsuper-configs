@@ -61,6 +61,9 @@ Plugin 'renamer.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'rust-lang/rust.vim'
+Plugin 'rhysd/vim-gfm-syntax'
+Plugin 'cespare/vim-toml'
+Plugin 'godlygeek/tabular'
 " My bundles
 Plugin 'upsuper/vim-colorschemes'
 
