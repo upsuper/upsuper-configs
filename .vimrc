@@ -289,5 +289,5 @@ if has("gui_win32")
     " close one of the only two tabs, the tab bar would disappear. In
     " those cases, we need to update fullscreen.
     autocmd TabNew * call UpdateFullscreenWhenTabCountIs(2)
-    "autocmd TabClosed * call UpdateFullscreen(1)
+    "autocmd TabClosed * call UpdateFullscreenWhenTabCountIs(1)
 endif
