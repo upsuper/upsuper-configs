@@ -193,6 +193,7 @@ autocmd FileType conf   setl ts=8 sts=8 sw=8 noet
 autocmd FileType c      setl ts=8 sts=8 sw=8 noet list
 autocmd FileType gitconfig  setl noet
 autocmd FileType javascript setl ts=2 sts=2 sw=2 et
+autocmd FileType markdown setl ts=2 sts=2 sw=2 et
 
 " set foldmethods
 autocmd FileType yaml   setl fdm=indent
@@ -214,6 +215,11 @@ function! DisableSyntaxFoldForLongFile()
     endif
 endfunction
 autocmd FileType * call DisableSyntaxFoldForLongFile()
+
+" Disable markdown italic-related syntax matching because it is annoying
+" when lots of content includes underscore insider identifier.
+autocmd FileType markdown syn clear markdownError
+autocmd FileType markdown syn clear markdownItalic
 
 " close im when leave insert mode
 autocmd InsertLeave * set iminsert=0
