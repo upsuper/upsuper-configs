@@ -44,14 +44,16 @@ else
     call vundle#begin()
 endif
 
-" Bundles
+" Plugins
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mattn/emmet-vim'
 Plugin 'gmarik/sudo-gui.vim'
+"Plugin 'mozilla/rust', {'rtp': 'src/etc/vim'}
 "Plugin 'Rip-Rip/clang_complete'
 Plugin 'me-vlad/python-syntax.vim'
 Plugin 'othree/html5.vim'
+"Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-surround'
 Plugin 'groenewege/vim-less'
 Plugin 'xolox/vim-misc'
@@ -59,10 +61,14 @@ Plugin 'xolox/vim-session'
 "Plugin 'petRUShka/vim-opencl'
 Plugin 'renamer.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'hail2u/vim-css3-syntax'
 Plugin 'rust-lang/rust.vim'
+Plugin 'jamessan/vim-gnupg'
 Plugin 'rhysd/vim-gfm-syntax'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'will133/vim-dirdiff'
 Plugin 'cespare/vim-toml'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'jparise/vim-graphql'
 Plugin 'godlygeek/tabular'
 " My bundles
 Plugin 'upsuper/vim-colorschemes'
@@ -74,6 +80,9 @@ filetype plugin indent on
 let g:html_indent_inctags = 'body,head,tbody'
 let g:html_indent_script1 = 'inc'
 let g:html_indent_style1 = 'inc'
+
+" auto pairs
+let g:AutoPairsOnlyEOL = 1
 
 " indent related
 set autoindent
@@ -177,6 +186,7 @@ autocmd BufRead * syntax sync fromstart
 " override filetype
 autocmd BufRead,BufNewFile *.zsh-theme setl ft=zsh
 autocmd BufRead,BufNewFile *.ejs setl ft=html
+autocmd BufRead,BufNewFile *.bs setl ft=html
 
 " set indents
 autocmd FileType yaml   setl ts=2 sts=2 sw=2 et
@@ -191,9 +201,13 @@ autocmd FileType python setl ts=4 sts=4 sw=4 et
 autocmd FileType make   setl ts=8 sts=8 sw=8 noet
 autocmd FileType conf   setl ts=8 sts=8 sw=8 noet
 autocmd FileType c      setl ts=8 sts=8 sw=8 noet list
+autocmd FileType java   setl ts=4 sts=4 sw=4 noet
 autocmd FileType gitconfig  setl noet
 autocmd FileType javascript setl ts=2 sts=2 sw=2 et
 autocmd FileType markdown setl ts=2 sts=2 sw=2 et
+autocmd FileType typescript setl ts=2 sts=2 sw=2 et
+autocmd BufRead,BufNewFile *.bs setl ts=1 sts=1 sw=1 et
+autocmd BufRead,BufNewFile *.src.html setl ts=1 sts=1 sw=1 et
 
 " set foldmethods
 autocmd FileType yaml   setl fdm=indent
@@ -244,6 +258,7 @@ set completeopt=menu
 let g:clang_auto_select=1
 let g:clang_use_library=1
 let g:clang_sort_algo='alpha'
+let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 
 " python syntax highlight
 let g:python_slow_sync=1
@@ -291,3 +306,6 @@ if has("gui_win32")
     autocmd TabNew * call UpdateFullscreenWhenTabCountIs(2)
     "autocmd TabClosed * call UpdateFullscreenWhenTabCountIs(1)
 endif
+
+" rust.vim
+"let g:rustfmt_autosave = 1
