@@ -1,5 +1,6 @@
 .DS_Store
 .*.swp
+.*.swo
 .clang_complete
 *.xcodeproj/project.xcworkspace/
 *.xcodeproj/xcuserdata/
