@@ -9,6 +9,9 @@
 	smtpuser = quanxunzhen@gmail.com
 	smtpserverport = 587
 
+[protocol]
+	version = 2
+
 [github]
 	user = upsuper
 
@@ -18,5 +21,14 @@
 [merge]
 	tool = mvimdiff -f
 
+[diff]
+	tool = vimdiff
+
 [credential]
 	helper = osxkeychain
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
